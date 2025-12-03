@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI LEGAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      /* Hide scrollbar globally */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      
+      /* Utility class for explicit no-scrollbar */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Animations */
+      @keyframes messageSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-message-slide-in {
+        animation: messageSlideIn 0.3s ease-out forwards;
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .animate-cursor-blink {
+        animation: blink 1s step-end infinite;
+      }
+
+      /* Page Transitions */
+      @keyframes pageEnter {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+          filter: blur(5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+
+      .animate-page-enter {
+        animation: pageEnter 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      @keyframes slideUpFadeOut {
+        to {
+          opacity: 0;
+          transform: translateY(-100px); /* Increased distance for clearer exit */
+          filter: blur(8px);
+        }
+      }
+
+      .animate-slide-up-out {
+        animation: slideUpFadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Smoother easing */
+      }
+
+      @keyframes slideUpIn {
+        from {
+          opacity: 0;
+          transform: translateY(100%); /* Start completely from bottom */
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-slide-up-in {
+        animation: slideUpIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "uuid": "https://esm.sh/uuid@9.0.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^2.3.0",
+    "three": "https://esm.sh/three@0.160.0",
+    "next-themes": "https://esm.sh/next-themes@0.3.0?external=react,react-dom",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom",
+    "motion/react": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom",
+    "@tsparticles/react": "https://esm.sh/@tsparticles/react@3.0.0?external=react,react-dom,@tsparticles/engine",
+    "@tsparticles/engine": "https://esm.sh/@tsparticles/engine@3.9.1",
+    "@tsparticles/slim": "https://esm.sh/@tsparticles/slim@3.9.1",
+    "@radix-ui/react-slot": "https://esm.sh/@radix-ui/react-slot@1.0.2?external=react,react-dom",
+    "class-variance-authority": "https://esm.sh/class-variance-authority@0.7.0",
+    "motion/": "https://aistudiocdn.com/motion@^12.23.25/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300 overflow-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "Copy of AI LEGAL",
+  "description": "Автоматизированная система юридического консультирования по законодательству Республики Узбекистан.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
